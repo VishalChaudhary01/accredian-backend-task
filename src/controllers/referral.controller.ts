@@ -21,7 +21,7 @@ export const submitReferral = async (req: Request, res: Response) => {
     });
     // send email to the user
     // await sendReferralEmail(email, name, referralCode);
-    res.status(201).json({ success: true, message: 'Referral submitted successfully', referral });
+    res.status(201).json({ success: true, message: 'Referral submitted successfully', referralCode: referral.referralCode });
   } catch (error) {
     console.error(error);
     if (error instanceof ZodError) {
